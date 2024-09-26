@@ -1,0 +1,3 @@
+- name: Test ping
+  ansible.buildin.ping:
+    data: "pong"
