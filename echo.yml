@@ -1,2 +1,4 @@
+---
+
 - name: Test print
   shell: printf "Hallo"
