@@ -1,5 +1,6 @@
 ---
-
-- name: Test ping
-  ansible.buildin.ping:
-    data: "pong"
+- hosts: sll
+  become: true
+  tasks:
+  - name: Echo
+    shell: printf "Hallo"
