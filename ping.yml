@@ -1,5 +1,5 @@
 ---
-- hosts: sll
+- hosts: all
   become: true
   tasks:
   - name: Echo
