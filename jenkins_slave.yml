@@ -1,8 +1,8 @@
 ---
 - hosts: slave
   become: true 
-  tasks: 
-   - name: Update apt package list
+  tasks:
+    - name: Update apt package list
       apt:
         update_cache: yes
         
