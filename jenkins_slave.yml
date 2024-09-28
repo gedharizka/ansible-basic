@@ -3,8 +3,8 @@
   become: true 
   tasks: 
    - name: Update apt package list
-      apt:
-        update_cache: yes
+    apt:
+      update_cache: yes
   - name: add jenkins key 
     apt_key: 
       url:  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
@@ -16,11 +16,11 @@
       state: present 
 
   - name: Install fontconfig and openjdk-17-jre
-      apt:
-        name:
-          - fontconfig
-          - openjdk-17-jre
-        state: present
+    apt:
+      name:
+        - fontconfig
+        - openjdk-17-jre
+      state: present
 
   - name: install jenkins 
     apt: 
