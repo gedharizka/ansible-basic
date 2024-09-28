@@ -16,11 +16,11 @@
       state: present 
 
   - name: Install fontconfig and openjdk-17-jre
-      apt:
-        name:
-          - fontconfig
-          - openjdk-17-jre
-        state: present
+    apt:
+      name:
+        - fontconfig
+        - openjdk-17-jre
+      state: present
 
   - name: install jenkins 
     apt: 
