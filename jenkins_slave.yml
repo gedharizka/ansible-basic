@@ -1,5 +1,5 @@
 ---
-- hosts: jenkins-master
+- hosts: slave
   become: true 
   tasks: 
    - name: Update apt package list
