@@ -25,3 +25,22 @@
       service:
         name: docker
         enabled: 'yes'
+
+    - name: Download Docker Compose
+      ansible.builtin.command:
+        cmd: curl -L "https://github.com/docker/compose/releases/download/2.29.7/docker-compose-{{ ansible_system }}-{{ ansible_architecture }}" -o /usr/local/bin/docker-compose
+      args:
+        creates: /usr/local/bin/docker-compose
+
+    - name: Set execute permission for Docker Compose
+      ansible.builtin.file:
+        path: /usr/local/bin/docker-compose
+        mode: '0755'
+
+    - name: Check Docker Compose version
+      ansible.builtin.command: /usr/local/bin/docker-compose --version
+      register: compose_version
+
+    - name: Display Docker Compose version
+      ansible.builtin.debug:
+        msg: "Docker Compose version: {{ compose_version.stdout }}"
