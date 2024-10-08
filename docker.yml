@@ -26,9 +26,9 @@
         name: docker
         enabled: 'yes'
 
-    - name: Download Docker Compose
+    - name: Download the latest version of Docker Compose
       ansible.builtin.command:
-        cmd: curl -L "https://github.com/docker/compose/releases/download/2.29.7/docker-compose-{{ ansible_system }}-{{ ansible_architecture }}" -o /usr/local/bin/docker-compose
+        cmd: curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-{{ ansible_system }}-{{ ansible_architecture }}" -o /usr/local/bin/docker-compose
       args:
         creates: /usr/local/bin/docker-compose
 
